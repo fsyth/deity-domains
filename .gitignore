@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IDEs / editors
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS-generated files
+.Spotlight-V100
+.Trashes
