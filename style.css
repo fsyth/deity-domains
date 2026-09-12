@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6vh 8vw;
+  padding: 0vh 8vw;
 }
 
 article {
@@ -52,12 +52,12 @@ h2 {
 }
 
 #part-1 {
-  font-size: 3vw;
+  font-size: clamp(1.8rem, max(3vw, 4vh), 5rem);
   color: var(--muted-ink);
 }
 
 #part-2 {
-  font-size: 6vw;
+  font-size: clamp(2.4rem, max(6vw, 8vh), min(8rem, 40vw));
   font-weight: 700;
   color: var(--ink);
 
@@ -75,12 +75,12 @@ h2 {
 
 button {
   font: inherit;
-  font-size: 1.5vw;
+  font-size: clamp(1rem, max(1.5vw, 2vh), 3rem);
   color: var(--ink);
   background: transparent;
   border: 1px solid var(--accent);
-  border-radius: 0.4vw;
-  padding: 1vw 2vw;
+  border-radius: 0.4em;
+  padding: 0.6em 1.2em;
   cursor: pointer;
   transition:
     background-color 150ms ease,
@@ -108,8 +108,9 @@ footer {
 
 .credit {
   font-family: system-ui, sans-serif;
-  font-size: 0.75vw;
+  font-size: clamp(0.75rem, max(0.75vw, 0.9vh), 0.9rem);
   color: var(--muted-ink);
+  text-align: center;
 }
 
 a {
