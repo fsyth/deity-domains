@@ -24,58 +24,74 @@ body {
 }
 
 #main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
   align-items: center;
-  padding: 0vh 8vw;
+  padding: 5vh 6vw 5vh;
+  overflow-x: auto;
 }
 
 article {
   width: 100%;
   max-width: 90vw;
-  text-align: center;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: center;
 }
 
 #output {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2vh;
 }
 
+h1,
 h2 {
   margin: 0;
-  font-weight: 400;
-  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: break-word;
 }
 
 #part-1 {
-  font-size: clamp(1.8rem, max(3vw, 4vh), 5rem);
+  font-size: clamp(
+    1.5rem,
+    max(4vw, 6vh),
+    min(5.5vw, 9vh, 2.5rem)
+  );
+  font-weight: 400;
+  line-height: 1.15;
   color: var(--muted-ink);
 }
 
 #part-2 {
-  font-size: clamp(2.4rem, max(6vw, 8vh), min(8rem, 40vw));
+  width: 100%;
+  max-width: 90vw;
+  font-size: clamp(
+    2.5rem,
+    max(9vw, 14vh),
+    min(12vw, 16vh, 6rem)
+  );
   font-weight: 700;
+  line-height: 1.05;
   color: var(--ink);
-
-  width: 90vw;
-  min-height: 4em;
 }
 
 #controls {
-  position: absolute;
-  bottom: 12vh;
-  left: 0;
-  width: 100%;
+  padding: 3vh;
   text-align: center;
 }
 
 button {
   font: inherit;
-  font-size: clamp(1rem, max(1.5vw, 2vh), 3rem);
+  font-size: clamp(
+    1rem,
+    max(1.5vw, 2.5vh),
+    min(5.5vw, 9vh, 2.5rem)
+  );
   color: var(--ink);
   background: transparent;
   border: 1px solid var(--accent);
@@ -100,15 +116,19 @@ button:active {
 }
 
 footer {
-  position: absolute;
-  bottom: 3vh;
   display: flex;
+  justify-content: center;
   gap: 2vw;
 }
 
 .credit {
   font-family: system-ui, sans-serif;
-  font-size: clamp(0.75rem, max(0.75vw, 0.9vh), 0.9rem);
+  font-size: clamp(
+    0.75rem,
+    max(0.75vw, 1vh),
+    0.9rem
+  );
+
   color: var(--muted-ink);
   text-align: center;
 }
@@ -119,4 +139,22 @@ a {
 
 a:hover {
   color: var(--accent-dark);
+}
+
+@media (max-width: 500px) {
+  footer {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-height: 500px) {
+  #main {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  #output {
+    gap: 1vh;
+  }
 }
